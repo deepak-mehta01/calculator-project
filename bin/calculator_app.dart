@@ -5,13 +5,22 @@ void main(List<String> arguments) {
 
   int val1 = int.parse(stdin.readLineSync()!);
   int val2 = int.parse(stdin.readLineSync()!);
-  print('Here are your two numbers \n $val1, $val2');
+
+  print('Please choose from below option');
+  print('(1)Addition \n(2)Substraction \n(3)Multiplication \n(4)Division');
+
+  int userInput = int.parse(stdin.readLineSync()!);
 
   var calc = Calculation();
-  calc.addition(val1, val2);
-  calc.substraction(val1, val2);
-  calc.multiplication(val1, val2);
-  calc.division(val1, val2);
+  if (userInput == 1) {
+    calc.addition(val1, val2);
+  } else if (userInput == 2) {
+    calc.substraction(val1, val2);
+  } else if (userInput == 3) {
+    calc.multiplication(val1, val2);
+  } else if (userInput == 4) {
+    calc.division(val1, val2);
+  }
 }
 
 class Calculation {
