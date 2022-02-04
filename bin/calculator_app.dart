@@ -5,13 +5,16 @@ import 'calculation.dart';
 void main(List<String> arguments) {
   print('Please Enter Two Numbers');
 
-  double val1 = double.parse(stdin.readLineSync()!);
-  double val2 = double.parse(stdin.readLineSync()!);
+  dynamic val1 = stdin.readLineSync();
+  validation(val1);
+  dynamic val2 = stdin.readLineSync();
+  validation(val2);
 
   print('Please choose from below option');
   print('(1)Addition \n(2)Substraction \n(3)Multiplication \n(4)Division');
 
-  int userInput = int.parse(stdin.readLineSync()!);
+  dynamic userInput = stdin.readLineSync();
+  validation(userInput);
 
   var calc = Calculation();
   switch (userInput) {
@@ -40,5 +43,14 @@ void main(List<String> arguments) {
         print("Please Choose Valid Option");
       }
       break;
+  }
+}
+
+num validation(var number) {
+  try {
+    return num.parse(number);
+  } catch (e) {
+    print("Please Enter Valid Input");
+    exit(1);
   }
 }
