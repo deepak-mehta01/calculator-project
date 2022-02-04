@@ -12,14 +12,27 @@ void main(List<String> arguments) {
   int userInput = int.parse(stdin.readLineSync()!);
 
   var calc = Calculation();
-  if (userInput == 1) {
-    calc.addition(val1, val2);
-  } else if (userInput == 2) {
-    calc.substraction(val1, val2);
-  } else if (userInput == 3) {
-    calc.multiplication(val1, val2);
-  } else if (userInput == 4) {
-    calc.division(val1, val2);
+  switch (userInput) {
+    case 1:
+      {
+        calc.addition(val1, val2);
+      }
+      break;
+    case 2:
+      {
+        calc.substraction(val1, val2);
+      }
+      break;
+    case 3:
+      {
+        calc.multiplication(val1, val2);
+      }
+      break;
+    case 4:
+      {
+        calc.division(val1, val2);
+      }
+      break;
   }
 }
 
