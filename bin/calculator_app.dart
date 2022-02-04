@@ -1,10 +1,12 @@
 import 'dart:io';
 
+import 'calculation.dart';
+
 void main(List<String> arguments) {
   print('Please Enter Two Numbers');
 
-  int val1 = int.parse(stdin.readLineSync()!);
-  int val2 = int.parse(stdin.readLineSync()!);
+  double val1 = double.parse(stdin.readLineSync()!);
+  double val2 = double.parse(stdin.readLineSync()!);
 
   print('Please choose from below option');
   print('(1)Addition \n(2)Substraction \n(3)Multiplication \n(4)Division');
@@ -33,31 +35,10 @@ void main(List<String> arguments) {
         calc.division(val1, val2);
       }
       break;
-  }
-}
-
-class Calculation {
-  void addition(int num1, int num2) {
-    int result = (num1 + num2);
-
-    print('The answer is \n $result');
-  }
-
-  void substraction(int num1, int num2) {
-    int result = (num1 - num2);
-
-    print('The answer is \n $result');
-  }
-
-  void multiplication(int num1, int num2) {
-    int result = (num1 * num2);
-
-    print('The answer is \n $result');
-  }
-
-  void division(int num1, int num2) {
-    double result = (num1 / num2);
-
-    print('The answer is \n $result');
+    default:
+      {
+        print("Please Choose Valid Option");
+      }
+      break;
   }
 }
